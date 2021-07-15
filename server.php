@@ -38,6 +38,10 @@
 
     $link = $_POST["expression"];
     
+    //если табли не создана, то создать
+    if(!is_table_exists($mysqli)){
+        create_table($mysqli);
+    }
     if(empty($link)===false){
         //удаление пробелов
         $string = str_replace(" ","", $link);
@@ -47,3 +51,4 @@
         $json = json_encode($history);
         echo $json;
     }
+    

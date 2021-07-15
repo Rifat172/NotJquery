@@ -20,7 +20,7 @@ function send(expr=""){
     });
     
     request.send(params);
-    return true;
+    return false;
  }
 
  /**
